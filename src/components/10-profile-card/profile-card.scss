@@ -1,0 +1,76 @@
+.profile-card{
+    font-family: 'Courier New', Courier, monospace;
+     border: 3px solid gray;
+     border-radius: 1rem;
+     width: 400px;
+     
+     
+        
+     .header{
+
+        height: 300px;
+        background-repeat:no-repeat ;
+        background-size: cover;
+        background-position: center bottom;
+        border-radius: 1rem 1rem 0 0;
+        position: relative;
+
+        &::after {
+             content:"" ;
+             background-color: rgba(201, 75, 16, 0.485);
+             position: absolute;
+             top: 0; left: 0; right: 0; bottom: 0;
+             border-radius: 1rem 1rem 0 0;
+
+
+        }
+     }
+     .content{
+        text-align: center;
+        color:rgb(54,54,54);
+
+            .avatar{
+                width: 150px;
+                height: 150px;
+                border-radius: 100px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                margin: 0 auto;
+                transform: translateY(-50%);
+                margin-bottom: -75px;
+                border: 8px solid rgba(203, 194, 194, 0.707);
+
+            }
+            h2{
+                font-size: 3rem;
+                font-weight: 600;
+            }
+            h4{
+                margin: 0;
+                font-size: 1.3rem;
+                color:rgb(158,158,158);
+                font-weight: 500;
+            }
+            .stats{
+                display: flex;
+                justify-content: space-evenly;
+                padding: 2rem;
+
+
+                h3{
+
+                    font-size: 3rem;
+                    font-weight: 400;
+                    margin: 0;
+                }
+                h6{
+
+                    font-size: 1rem;
+                    color:rgb(158,158,158);
+                    margin: 0;
+
+                }
+            }
+     }
+}
