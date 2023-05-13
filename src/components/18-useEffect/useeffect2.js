@@ -6,7 +6,7 @@ const Useffect2 = () => {
     const [counter, setcounter] = useState(0);
 
     useEffect(() => {
-      document.title = `Hello${counter}`;   
+      document.title = `Hellooo${counter}`;   
      
     }, [counter])
     
