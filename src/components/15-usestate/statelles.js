@@ -11,7 +11,7 @@ const Statelles = () => {
 
     return (
         <div className={classNames}>
-            <h1 className='text-center'>Dark/Light mode</h1>
+         <h1 className='text-center'>Dark/Light mode</h1>
             <div className='d-flex justify-content-evenly mt-5'>
                 <Button onClick={() => setMode("dark")}>Dark Mode</Button>
                 <Button onClick={() => setMode("light")}>Light Mode</Button>
