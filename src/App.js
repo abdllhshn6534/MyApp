@@ -25,6 +25,7 @@ import UseEffect from "./components/18-useEffect/useeffect";
 import Useffect2 from "./components/18-useEffect/useeffect2";
 import UseRef from "./components/20-useref/useref";
 import Scroll from "./components/20-useref/scroll";
+import UserCards from "./components/21-FetcUsers/user-cards";
 
 const App = () => {
     return (
@@ -55,10 +56,12 @@ const App = () => {
             <UseEffect></UseEffect>
             <Useffect2></Useffect2>
             <UseRef/>
+            <Scroll></Scroll>
+           
 
           
  */    }
-            <Scroll></Scroll>
+             <UserCards></UserCards>
          </React.Fragment>
     )
 }
