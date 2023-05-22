@@ -29,6 +29,7 @@ import UserCards from "./components/21-FetcUsers/user-cards";
 import Countries from "./components/22-axios-countries/countries";
 import ParentComp from "./components/23-Child-to-Parent/parent-comp";
 import Form1 from "./components/24-forms/form1";
+import Form2 from "./components/24-forms/form2";
 const App = () => {
     return (
         <React.Fragment>
@@ -63,10 +64,10 @@ const App = () => {
              <Countries></Countries>
                <ParentComp></ParentComp>
            
-
+             <Form1></Form1>
           
  */    }
-          <Form1></Form1>
+        <Form2/>
         </React.Fragment>
     )
 }
