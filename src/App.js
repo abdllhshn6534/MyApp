@@ -26,7 +26,9 @@ import Useffect2 from "./components/18-useEffect/useeffect2";
 import UseRef from "./components/20-useref/useref";
 import Scroll from "./components/20-useref/scroll";
 import UserCards from "./components/21-FetcUsers/user-cards";
-
+import Countries from "./components/22-axios-countries/countries";
+import ParentComp from "./components/23-Child-to-Parent/parent-comp";
+import Form1 from "./components/24-forms/form1";
 const App = () => {
     return (
         <React.Fragment>
@@ -57,12 +59,15 @@ const App = () => {
             <Useffect2></Useffect2>
             <UseRef/>
             <Scroll></Scroll>
+             <UserCards></UserCards>
+             <Countries></Countries>
+               <ParentComp></ParentComp>
            
 
           
  */    }
-             <UserCards></UserCards>
-         </React.Fragment>
+          <Form1></Form1>
+        </React.Fragment>
     )
 }
 
