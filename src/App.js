@@ -31,6 +31,7 @@ import ParentComp from "./components/23-Child-to-Parent/parent-comp";
 import Form1 from "./components/24-forms/form1";
 import Form2 from "./components/24-forms/form2";
 import Form3 from "./components/24-forms/form3";
+import Form4 from "./components/24-forms/form4";
 const App = () => {
     return (
         <React.Fragment>
@@ -67,8 +68,9 @@ const App = () => {
            
              <Form1></Form1>
              <Form2/>
+             <Form3></Form3>
  */    }
-        <Form3></Form3>
+        <Form4/>
         </React.Fragment>
     )
 }
