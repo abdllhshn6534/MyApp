@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HelloWorld from "./components/01-hello-world/hello-world";
+import HelloReact from "./components/02-hello-react/hello-react";
 import Jsx1 from "./components/03-jsx/jsx1";
 import Jsx2 from "./components/03-jsx/jsx2";
 import Jsx3 from "./components/03-jsx/jsx3";
@@ -34,14 +35,63 @@ import Form3 from "./components/24-forms/form3";
 import Form4 from "./components/24-forms/form4";
 import Form5 from "./components/24-forms/form5";
 import Form6 from "./components/24-forms/form6";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Col, Container, Row } from "react-bootstrap";
+import Headerr from "./components/00-home/header/header";
+import Menu from "./components/00-home/menu/menu";
+import StoreContext from "./store";
+import Exchange from "./components/25-context-api/exchange";
+import axios from "axios";
+
 const App = () => {
+    const [counter, setCounter] = useState(10);
+    const [currencies, setCurrencies] = useState({})
+
+    const loadData = async (second) => { 
+        try {
+            const resp = await axios.get("https://api.frankfurter.app/latest?from=TRY")
+            setCurrencies(resp.data.rates)
+        } catch (err) {
+            console.log(err)
+        }
+     }
+
+     useEffect(() => {
+       loadData()
+     
+    
+     }, [])
+     
+
+
     return (
-        <React.Fragment>
-            {/* <HelloWorld />
-            <Jsx1></Jsx1>
-            <Jsx2></Jsx2>
-            <Jsx3></Jsx3>
-             <Jsx4></Jsx4>
+        <StoreContext.Provider value={{ counter, setCounter, currencies}}>
+            <BrowserRouter>
+                <Headerr />
+                <Container fluid>
+                    <Row>
+                        <Col sm={2}>
+                            <Menu />
+                        </Col>
+                        <Col sm={10}>
+                            <Routes>
+                                <Route path="/hello-world" element={<HelloWorld />} />
+                                <Route path="/hello-react" element={<HelloReact />} />
+                                <Route path="/jsx1" element={<Jsx1></Jsx1>} />
+                                <Route path="/jsx2" element={<Jsx2></Jsx2>} />
+                                <Route path="/jsx3" element={<Jsx3></Jsx3>} />
+                                <Route path="/jsx4" element={<Jsx4></Jsx4>} />
+                                <Route path="/exchange" element={<Exchange></Exchange>} />
+
+                            </Routes>
+                        </Col>
+                    </Row>
+                </Container>
+                {/* 
+            
+            
+           
+             
             <Jsx5></Jsx5>
             <Jsx6></Jsx6> 
             <Style1></Style1>
@@ -73,10 +123,13 @@ const App = () => {
              <Form3></Form3>
              <Form4/>
              <Form5/>
+              <Form6 />
  */    }
-        <Form6/>
-        </React.Fragment>
-    )
+
+            </BrowserRouter>
+        </StoreContext.Provider>
+       
+    );
 }
 
 export default App; 

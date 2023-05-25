@@ -16,7 +16,7 @@ const Form5 = () => {
         password: Yup.string().required("Şifrenizi giriniz")
         .max(12,"maximum karakter sayısını aştınız")
         .min(3,"en az 3 karakter giriniz")
-    });
+    }); 
 
     const onSubmit = async(values)  => {
       try {
@@ -25,7 +25,7 @@ const Form5 = () => {
         localStorage.setItem("token",resp.data.token)
       } catch (error) {
         
-      } 
+      }  
 
     }
 
